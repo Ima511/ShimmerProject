@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="#CDDDDD"
+    android:padding="10sp"
+    >
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:cardCornerRadius="10sp"
+        android:visibility="gone"
+        android:id="@+id/post"
+        >
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10sp"
+            >
+            <androidx.cardview.widget.CardView
+                android:layout_width="70sp"
+                android:layout_height="70sp"
+                android:id="@+id/profilePicContainer"
+                app:cardCornerRadius="100sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                >
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+
+                    android:src="@drawable/user1"
+                    />
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/username"
+                android:text="John Doe"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                app:layout_constraintLeft_toRightOf="@id/profilePicContainer"
+                android:layout_marginStart="10sp"
+                app:layout_constraintTop_toTopOf="@id/profilePicContainer"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/time"
+                android:text="Just now"
+                android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                app:layout_constraintLeft_toRightOf="@id/profilePicContainer"
+                android:layout_marginStart="10sp"
+                app:layout_constraintTop_toBottomOf="@id/username"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="35sp"
+                android:id="@+id/caption"
+                android:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+                app:layout_constraintTop_toBottomOf="@id/profilePicContainer"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:layout_marginTop="10sp"
+                />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="250sp"
+                android:id="@+id/photoPost"
+                android:scaleType="centerCrop"
+                app:layout_constraintTop_toBottomOf="@id/caption"
+                android:src="@drawable/post"
+                android:layout_marginTop="10sp"
+                />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/facebookShimmerLayout"
+        android:background="#fff"
+        >
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:cardCornerRadius="10sp"
+            android:visibility="visible"
+            >
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10sp"
+                >
+                <androidx.cardview.widget.CardView
+                    android:layout_width="70sp"
+                    android:layout_height="70sp"
+                    android:id="@+id/profilePicContainerShimmer"
+                    app:cardCornerRadius="100sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:cardBackgroundColor="#dddddd"
+                    />
+
+                <TextView
+                    android:layout_width="150sp"
+                    android:layout_height="20sp"
+                    android:id="@+id/usernameShimmer"
+                    android:background="#dddddd"
+                    app:layout_constraintLeft_toRightOf="@id/profilePicContainerShimmer"
+                    android:layout_marginStart="10sp"
+                    app:layout_constraintTop_toTopOf="@id/profilePicContainerShimmer"
+                    android:layout_marginBottom="10sp"
+                    />
+                <TextView
+                    android:layout_width="100sp"
+                    android:layout_height="10sp"
+                    android:id="@+id/timeShimmer"
+                    android:background="#ddd"
+                    app:layout_constraintLeft_toRightOf="@id/profilePicContainerShimmer"
+                    android:layout_marginStart="10sp"
+                    app:layout_constraintTop_toBottomOf="@id/usernameShimmer"
+                    android:layout_marginTop="10sp"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="35sp"
+                    android:id="@+id/captionShimmer"
+                    android:background="#ddd"
+                    app:layout_constraintTop_toBottomOf="@id/profilePicContainerShimmer"
+                    android:layout_marginTop="10sp"
+                    />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="250sp"
+                    android:id="@+id/photoPostShimmer"
+                    android:background="#ddd"
+                    app:layout_constraintTop_toBottomOf="@id/captionShimmer"
+                    android:layout_marginTop="10sp"
+                    />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
